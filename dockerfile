@@ -14,9 +14,11 @@ COPY . .
 # Set environment variables (optional)
 # ENV SUPABASE_URL=your_supabase_url
 # ENV SUPABASE_KEY=your_supabase_key
+ENV FLASK_APP=app.py
+ENV FLASK_ENV=production  # Optional for production
 
 # Expose the port your app runs on (default for Flask is 5000)
 EXPOSE 5000
 
 # Command to run your app
-CMD ["python", "app.py"]
+CMD ["flask", "run", "--host=0.0.0.0"]
